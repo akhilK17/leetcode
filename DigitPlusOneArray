@@ -1,0 +1,36 @@
+class solution{
+	
+public:
+	vector<int> plusOne(vector<int>& digits){
+
+	int size = digits.size();
+
+	if(digits[size-1] <9){
+		digits[size-1] += 1;
+		return digits;
+	}
+
+	digits.push_back(0);
+	digits[size-1] = 0;
+
+	for(int i= size-2; i>=0; i--){
+		if(digits[i] < 9){
+			digits[i] += 1;
+			digits.pop_back();
+			return digits;
+		} else{
+			digits[i] = 0;
+		}
+
+		if(i == 0)
+			digits[i] =1;
+	}
+
+	if (size < 2){
+		digits[0] = 1;
+	}
+
+	return digits;
+
+	}	
+};
