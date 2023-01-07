@@ -10,7 +10,7 @@ class Solution:
             
             while nums_zeros == 2:
                 if nums[left] == 0:
-                    nums_zeros += 1
+                    nums_zeros -= 1
                 left += 1
             
             longest_sequence = max(longest_sequence, right - left + 1)
