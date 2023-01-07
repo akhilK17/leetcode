@@ -3,7 +3,7 @@ class Solution:
         longest_sequence = 0
         left, right = 0,0
         nums_zeros = 0
-
+        
         while right < len(nums):
             if nums[right] == 0:
                 nums_zeros += 1
