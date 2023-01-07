@@ -6,7 +6,7 @@ class Solution:
             for right in range(left, len(nums)):
                 if nums_zeros == 2:
                     break
-                if nums_zeros == 0:
+                if nums[right] == 0:
                     nums_zeros += 1
                 if nums_zeros <= 1:
                     longest_sequence = max(longest_sequence, right - left + 1)
