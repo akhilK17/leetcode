@@ -1,0 +1,21 @@
+< !DOCTYPE html> 
+‹meta charset="utf-8" /> 
+‹title›WebSocket Test‹/title>
+<script language="javascript" type="text/javascript")
+var wUri = "wss://echo.websocket.org/";
+var output;
+
+function init()
+{
+output = document. getElementById("output");
+testwebSocket ();
+}
+
+function testwebSocket ()
+{
+    websocket = new WebSocket (wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function (evt) { onMessage (evt) };
+    websocket.onerror = function (evt) { onError (evt) };
+}

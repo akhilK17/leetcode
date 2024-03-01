@@ -1,15 +1,19 @@
 import requests
-import json
 
-print('akhil')
-# Make a GET request to the Treasury API
-response = requests.get('https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates?sort=-record_date&limit=1&offset=0&account_type_code=T&realtime_start_date=2023-01-01')
+# Define the API endpoint URL
+url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
+endpoint = "/v1/accounting/od/rates_of_exchange"
+data = "?fields=country_currency_desc,exchange_rate,record_date&filter=record_date:gte:2023-01-01"
 
-# Parse the JSON response and extract the Treasury rate information
-data = json.loads(response.text)
-treasury_rate = data['data'][0]['average_interest_rate']
-print('akhil')
+# Define the query parameters
+params = {
+    "output": "json",
+    "type": "dailyTreasuryYieldCurveRate",
+    "series": "10year"
+}
 
-# Write the Treasury rate information to a file
-#with open('/path/to/treasury_rate.txt', 'w') as f:
-#    f.write(str(treasury_rate))
+# Send the API request
+response = requests.get(url + endpoint + data, params=params)
+
+# Parse the response JSON and extract the interest rate
+print(response)
