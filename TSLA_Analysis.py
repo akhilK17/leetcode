@@ -8,7 +8,7 @@ API_KEY = "N6oezGlLcHzxPhi34z2F6wKV0Ql9nG87"
 SYMBOL = "AAPL"
 
 # Get the real-time price of the stock
-url = "https://api.polygon.io/v2/aggs/ticker/" + SYMBOL + "/range/1/day/2023-05-12/2023-05-12"
+url = "https://api.polygon.io/v2/aggs/ticker/" + SYMBOL + "/range/1/month/2024-01-01/2024-06-13"
 response = requests.get(url, headers={"Authorization": "Bearer " + API_KEY})
 
 print("status code: ", response.status_code)
