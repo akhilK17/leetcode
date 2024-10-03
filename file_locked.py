@@ -18,7 +18,7 @@ def get_file_lock_count(file_path):
         return -1
 
 # Example usage:
-file_path = '/Users/akhilkhandelwal/Downloads/Sanyojita-DS160-09112024.pdf'
+file_path = '/Users/<UserName>/Downloads/*.pdf'
 lock_count = get_file_lock_count(file_path)
 
 if lock_count > 0:
