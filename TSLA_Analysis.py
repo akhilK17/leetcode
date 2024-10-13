@@ -1,8 +1,8 @@
 import json
 import requests
-
-# Get your Polygon API key from https://polygon.io/
-API_KEY = "N6oezGlLcHzxPhi34z2F6wKV0Ql9nG87"
+import os
+# Get your Polygon API key from enviornment variable
+API_KEY = os.environ.get("POLYGON_API_KEY")
 
 # Get the symbol of the stock that you want to track
 SYMBOL = "AAPL"
