@@ -16,7 +16,7 @@ def filter_message(message):
     # For example, skip messages containing "spam"
     unwanted_keywords = ['report', 'NA']
     if any(keyword in message.message.lower() for keyword in unwanted_keywords):
-        return False9
+        return False
     return True
 
 # Event handler for new messages in the source channel
